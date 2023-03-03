@@ -77,6 +77,7 @@ Employee.updateById = (id, employee, result) => {
   );
 };
 
+
 Employee.remove = (id, result) => {
   sql.query("DELETE FROM employee WHERE id = ?", id, (err, res) => {
     if (err) {
@@ -91,7 +92,7 @@ Employee.remove = (id, result) => {
       return;
     }
 
-    console.log("deleted employee with id: ", id);
+    console.log("deleted employee with id: ", id  );
     result(null, res);
   });
 };

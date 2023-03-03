@@ -103,15 +103,15 @@ exports.delete = (req, res) => {
 };
 
 // Delete all employees from the database.
-exports.deleteAll = (req, res) => {
-    Employee.removeAll((err, data) => {
-        if (err)
-          res.status(500).send({
-            message:
-              err.message || "Some error occurred while removing all employees."
-          });
-        else res.send({ message: `All Employees were deleted successfully!` });
-    });
+exports.deleteAll = (req, res) => {``
+  Employee.removeAll((err, data) => {
+      if (err)
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while removing all employees."
+        });
+      else res.send({ message: `All Employees were deleted successfully!` });
+  });
 
 };
 

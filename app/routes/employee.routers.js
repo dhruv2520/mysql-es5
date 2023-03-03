@@ -14,8 +14,14 @@ module.exports = app => {
     app.put("/employees/:employeeId", employees.update);
   
     // Delete a employee with employeeId
-     app.delete("/:employeeId", employees.delete);
+      app.delete("aa/:employeeId", employees.delete);
   
     // Create a new employee
-      app.delete("/employees", employees.deleteAll);
+    app.delete("/employees", employees.deleteAll);
+
   };
+
+
+
+
+
