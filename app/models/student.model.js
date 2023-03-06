@@ -55,7 +55,7 @@ Student.getAll = result => {
 
 Student.updateById = (id, student, result) => {
   sql.query(
-    "UPDATE student SET designation = ?, doj = ?, name = ?, WHERE id = ?",
+    "UPDATE student SET designation = ?, doj = ?, name = ? WHERE id = ?",
     [student.designation, student.doj, student.name, id],
     (err, res) => {
       if (err) {
