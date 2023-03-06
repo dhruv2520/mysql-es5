@@ -10,11 +10,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // a route for home page
-app.get("/compny", (req, res) => {
+app.get("/home", (req, res) => {
   res.json({ message: "NodeJs CRUD Application" });
 });
-
+app.get("/data", (req, res) => {
+  res.json({ message: "NodeJs CRUD Application" });
+});
 require("./app/routes/employee.routers.js")(app);
+require("./app/routes/student.routers.js")(app);
 
 // setting port to 3000, & listening for requests http request.
 app.listen(3000, () => {
