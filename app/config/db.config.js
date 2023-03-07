@@ -2,5 +2,6 @@ module.exports = {
     HOST: "localhost",
     USER: "root",
     PASSWORD: "",
-    DB: "employeedb"
+    DB: "employeedb",
+    multipleStatements: true
   };
