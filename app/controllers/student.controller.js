@@ -112,14 +112,29 @@ Student.removeAll((err, data) => {
       else res.send({ message: `All Students were deleted successfully!` });
   });
 };
-exports.innerJoin = (req, res) => {
-  Student.getAll((err, data) => {
+
+exports.innerjoin = (req, res) => {``
+Student.innerjoin((err, data) => {
       if (err)
         res.status(500).send({
           message:
-            err.message || "Some error occurred while retrieving student."
+            err.message || "Some error occurred while removing all students."
         });
-      else res.send(data);
+      else res.send({ message: `All Students were join successfully!`,data });
+  });
+};
+
+
+// left join
+
+exports.leftjoin = (req, res) => {``
+Student.leftjoin((err, data) => {
+      if (err)
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while removing all students."
+        });
+      else res.send({ message: `All Students were leftjoin successfully!`,data });
   });
 };
 

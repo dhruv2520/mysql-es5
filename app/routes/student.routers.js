@@ -20,7 +20,7 @@ module.exports = app => {
     app.delete("/deleteallstudents", students.deleteAll);
     
     // Create a join query
-    app.get ("/datastudents", students.innerJoin);
+    app.get ("/innerjoin", students.innerjoin);
 
   };
 

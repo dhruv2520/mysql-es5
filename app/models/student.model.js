@@ -108,17 +108,22 @@ Student.removeAll = result => {
     result(null, res);
   });
 
-  Student.innerJoin = result => {
-    // var sql = "SELECT Student.designation AS student,Employee.designation FROM employee JOIN student ON student.Employee.designation = employee.id";
-   
-    const query = 'SELECT * ' + 
-                  'FROM `student` ' +
-                  'JOIN `employee` ON `employee`.`id` = `student`.`name`';
-    sql.query(sql, function (err, result) {
-       if (err) throw err;
-      console.log(result);
-    });
-  }
-  };
+}
+
+
+Student.innerjoin = result => {
+  sql.query("SELECT student.id,employee.name FROM student INNER JOIN employee ON student.name=employee.name", (err, res) => {
+    if (err) {
+      console.log("error: ", err);
+      result(null, err);
+      return;
+    }
+
+    console.log(`INNERJOIN ${res} students`);
+    result(null, res);
+    return res
+  });
+
+}
 
 module.exports = Student;
