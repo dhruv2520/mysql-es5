@@ -18,6 +18,9 @@ module.exports = app => {
   
     // Create a new employee
     app.delete("/students", students.deleteAll);
+    
+    // Create a join query
+    app.get ("/datastudents", students.innerJoin);
 
   };
 

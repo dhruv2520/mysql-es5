@@ -107,6 +107,14 @@ Student.removeAll = result => {
     console.log(`deleted ${res.affectedRows} students`);
     result(null, res);
   });
-};
+
+  Student.innerJoin = result => {
+    var sql = "SELECT Student.designation AS student,Employee.designation FROM employee JOIN student ON student.Employee.designation = employee.id";
+    sql.query(sql, function (err, result) {
+       if (err) throw err;
+      console.log(result);
+    });
+  }
+  };
 
 module.exports = Student;

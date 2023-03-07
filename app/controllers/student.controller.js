@@ -111,6 +111,15 @@ Student.removeAll((err, data) => {
         });
       else res.send({ message: `All Students were deleted successfully!` });
   });
-
+};
+exports.innerJoin = (req, res) => {
+  Student.getAll((err, data) => {
+      if (err)
+        res.status(500).send({
+          message:
+            err.message || "Some error occurred while retrieving student."
+        });
+      else res.send(data);
+  });
 };
 

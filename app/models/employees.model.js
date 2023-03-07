@@ -49,7 +49,7 @@ Employee.getAll = result => {
       return;
     }
 
-    console.log("employees: ", res);
+    console.log("employee: ", res);
     result(null, res);
   });
 };
@@ -105,7 +105,7 @@ Employee.removeAll = result => {
       return;
     }
 
-    console.log(`deleted ${res.affectedRows} employees`);
+    console.log(`deleted ${res.affectedRows} employee`);
     result(null, res);
   });
 };
