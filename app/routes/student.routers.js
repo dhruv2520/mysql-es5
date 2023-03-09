@@ -8,7 +8,7 @@ module.exports = app => {
      app.get("/students", students.findAll);
   
     // Retrieve a single employee with employeeId
-     app.get("/students/:studentId", students.findOne);
+     app.get("/students/:name", students.findOne);
   
     // Update a employee with employeeId
     app.put("/students/:studentId", students.update);

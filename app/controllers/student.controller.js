@@ -41,15 +41,15 @@ exports.findAll = (req, res) => {
 
 // Find a single employee with a employeeId
 exports.findOne = (req, res) => {
-    Student.findById(req.params.studentId, (err, data) => {
+    Student.findByname(req.params.name, (err, data) => {
         if (err) {
           if (err.kind === "not_found") {
             res.status(404).send({
-              message: `Not found Student with id ${req.params.studentId}.`
+              message: `Not found Student with name ${req.params.name}.`
             });
           } else {
             res.status(500).send({
-              message: "Error retrieving Student with id " + req.params.studentId
+              message: "Error retrieving Student with name " + req.params.name
             });
           }
         } else res.send(data);
@@ -121,6 +121,7 @@ Student.innerjoin((err, data) => {
             err.message || "Some error occurred while removing all students."
         });
       else res.send({ message: `All Students were join successfully!`,data });
+      console.log('data:>>>>>>>>>>>>>> ', data);
   });
 };
 

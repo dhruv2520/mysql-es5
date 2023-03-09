@@ -20,8 +20,8 @@ Student.create = (newStudent, result) => {
   });
 };
 
-Student.findById = (studentId, result) => {
-  sql.query(`SELECT * FROM student WHERE id = ${studentId}`, (err, res) => {
+Student.findByname = (studentname, result) => {
+  sql.query(`SELECT * FROM student WHERE name = '${studentname}'`, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(err, null);
@@ -29,8 +29,8 @@ Student.findById = (studentId, result) => {
     }
 
     if (res.length) {
-      console.log("found student: ", res[0]);
-      result(null, res[0]);
+      console.log("found student: ", res);
+      result(null, res);
       return;
     }
 

@@ -4,4 +4,4 @@ module.exports = {
     PASSWORD: "",
     DB: "employeedb",
     multipleStatements: true
-  };
+  }; 

@@ -20,6 +20,6 @@ require("./app/routes/employee.routers.js")(app);
 require("./app/routes/student.routers.js")(app);
 
 // setting port to 3000, & listening for requests http request.
-app.listen(3000, () => {
-  console.log("Server is running on port 3000.");
+app.listen(3500, () => {
+  console.log("Server is running on port 3500.");
 });
